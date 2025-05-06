@@ -1,5 +1,5 @@
 from sqlmodel import Session, select
-from data.models import Usuario, EstadoUsuario
+from models import Usuario, EstadoUsuario
 
 def crear_usuario(session: Session, usuario: Usuario):
     session.add(usuario)

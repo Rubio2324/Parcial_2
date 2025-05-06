@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlmodel import Session
-from utils.db import engine, crear_db, get_session
-from data.models import Usuario, EstadoUsuario
-from operations.operations_db import (
+from db import crear_db, get_session
+from models import Usuario, EstadoUsuario
+from operations_db import (
     crear_usuario,
     obtener_usuarios,
     obtener_usuario_por_id,
