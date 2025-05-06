@@ -1,0 +1,34 @@
+### Crear un nuevo usuario
+POST http://localhost:8000/usuarios/
+Content-Type: application/json
+
+{
+    "nombre": "Usuario de Prueba",
+    "email": "test@example.com",
+    "premium": true
+}
+
+### Listar todos los usuarios
+GET http://localhost:8000/usuarios/
+
+### Obtener usuario por ID
+GET http://localhost:8000/usuarios/1
+
+### Actualizar usuario
+PUT http://localhost:8000/usuarios/1
+Content-Type: application/json
+
+{
+    "nombre": "Usuario Actualizado",
+    "email": "updated@example.com",
+    "premium": true
+}
+
+### Eliminar usuario
+DELETE http://localhost:8000/usuarios/1
+
+### Obtener usuarios por estado
+GET http://localhost:8000/usuarios/estado/activo
+
+### Obtener usuarios premium y activos
+GET http://localhost:8000/usuarios/premium/activos
