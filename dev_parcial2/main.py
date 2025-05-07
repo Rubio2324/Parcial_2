@@ -111,3 +111,4 @@ def tareas_por_usuario(usuario_id: int, session: Session = Depends(get_session))
 def tareas_por_estado(estado: EstadoTarea, session: Session = Depends(get_session)):
     tareas = session.exec(select(Tarea).where(Tarea.estado == estado)).all()
     return tareas
+

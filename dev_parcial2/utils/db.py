@@ -19,6 +19,8 @@ if all([os.getenv(f"CLEVER_{key}") for key in ["USER", "PASSWORD", "HOST", "PORT
 
 FINAL_DB_URL = CLEVER_DB if CLEVER_DB else DATABASE_URL
 
+print(f"Conectando a la base de datos en: {FINAL_DB_URL}")
+
 engine = create_engine(FINAL_DB_URL, echo=os.getenv("DEBUG", "False").lower() == "true")
 
 
