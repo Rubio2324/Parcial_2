@@ -18,7 +18,7 @@ def crear_usuario(session: Session, usuario: Usuario):
     session.add(usuario)
     session.commit()
     session.refresh(usuario)
-    return usuario
+    return usuari
 
 
 def obtener_usuarios(session: Session):
