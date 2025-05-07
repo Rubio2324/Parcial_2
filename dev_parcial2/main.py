@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlmodel import Session, select
 from typing import List
-from db import engine, crear_db, get_session
-from models import Usuario, EstadoUsuario, Tarea, EstadoTarea, TareaCreate
-from operations_db import (
+from utils.db import crear_db, get_session
+from data.models import Usuario, EstadoUsuario, Tarea, EstadoTarea, TareaCreate
+from operations.operations_db import (
     crear_usuario,
     obtener_usuarios,
     obtener_usuario_por_id,
@@ -65,9 +65,10 @@ def usuarios_por_estado_endpoint(estado: EstadoUsuario, session: Session = Depen
     return usuarios_por_estado(session, estado)
 
 
-@app.get("/usuarios/premium/activos", response_model=List[Usuario], summary="Listar usuarios premium y activos")
+@app.get("/usuarios/premium/activos", response_model=List[Usuario], summary="Mostrar usuarios premium y activos")
 def premium_activos_endpoint(session: Session = Depends(get_session)):
     return usuarios_premium_y_activos(session)
+
 
 
 # Rutas para tareas

@@ -2,7 +2,6 @@
 import os
 from dotenv import load_dotenv
 from sqlmodel import SQLModel, create_engine, Session
-from models import Usuario, Tarea
 
 load_dotenv()
 

@@ -1,6 +1,6 @@
 from sqlmodel import Session, select
 from fastapi import HTTPException, status
-from models import Usuario, EstadoUsuario, Tarea, EstadoTarea
+from data.models import Usuario, EstadoUsuario, Tarea
 from datetime import datetime
 
 
